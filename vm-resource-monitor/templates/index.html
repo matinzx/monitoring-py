@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/style.css">
     <title>VM Resource Monitor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
-<body>
-    <header>
-        <h1>VM Resource Monitor</h1>
-    </header>
-    <main>
-        <div id="info">Loading system information...</div>
-    </main>
+<body class="bg-gradient-to-r from-purple-400 via-purple-600 to-green-500 min-h-screen text-gray-100 transition duration-500">
+    <div class="container mx-auto py-8">
+        <div class="flex justify-between items-center">
+            <h1 class="text-4xl font-bold">VM Resource Monitor</h1>
+            <button id="toggle-dark-mode" class="p-3 rounded-full shadow hover:shadow-lg transition duration-500 bg-gray-100 text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4.22 4.22a1 1 0 00-1.42 0l-.71.7a1 1 0 001.42 1.42l.71-.7a1 1 0 000-1.42zM2 9a1 1 0 000 2h1a1 1 0 100-2H2zm12-7a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm3.78 4.22a1 1 0 010 1.42l-.7.71a1 1 0 01-1.42-1.42l.7-.71a1 1 0 011.42 0zM10 18a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1zm-5.78-.22a1 1 0 01-.7-1.42l.7-.71a1 1 0 011.42 1.42l-.7.71a1 1 0 01-.72.3zm11.56 0a1 1 0 01-.7-.3l-.7-.71a1 1 0 111.42-1.42l.7.71a1 1 0 01-.72 1.42z" />
+                </svg>
+            </button>
+        </div>
+        <div id="system-info" class="p-6 mt-8 bg-white text-gray-800 shadow rounded-lg">
+            Loading system information...
+        </div>
+    </div>
     <script src="/static/js/script.js"></script>
 </body>
 </html>
