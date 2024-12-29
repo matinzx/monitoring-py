@@ -1,151 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VM Grid with Dynamic Background</title>
-  <style>
-    /* متغیرهای حالت پیش‌فرض (لایت) */
-    :root {
-      --bg-gradient: linear-gradient(to bottom right, #6a11cb, #2575fc, #f80759);
-      --text-color: #333;
-      --card-bg: rgba(255, 255, 255, 0.9);
-      --card-border: rgba(200, 200, 200, 0.8);
-      --shadow-color: rgba(0, 0, 0, 0.3);
-    }
-
-    /* متغیرهای حالت دارک */
-    [data-theme="dark"] {
-      --bg-gradient: radial-gradient(circle at top left, #232323, #2f2f2f, #3a3a3a, #1b4032); /* مشکی-خاکستری-سبز زیتونی */
-      --text-color: #e4e4e4;
-      --card-bg: rgba(40, 50, 40, 0.9); /* سبز-خاکستری برای بخش کارت‌ها */
-      --card-border: rgba(90, 110, 90, 0.8);
-      --shadow-color: rgba(255, 255, 255, 0.1);
-    }
-
-    /* استایل عمومی */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--bg-gradient);
-      color: var(--text-color);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow-x: hidden; /* جلوگیری از اسکرول افقی */
-      transition: background 0.3s, color 0.3s;
-    }
-
-    header {
-      width: 100%;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.2);
-      color: var(--text-color);
-      text-align: center;
-      box-shadow: 0 2px 5px var(--shadow-color);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      width: 90%;
-      margin-top: 20px;
-    }
-
-    .vm-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 10px var(--shadow-color);
-      text-align: center;
-      transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
-    }
-
-    .vm-card h3 {
-      margin: 0 0 10px 0;
-      font-size: 18px;
-    }
-
-    .vm-card p {
-      font-size: 14px;
-    }
-
-    .toggle-button {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      background-color: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 5px;
-      color: var(--text-color);
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VM Resource Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>VM Overview</h1>
-  </header>
-  <button class="toggle-button" id="themeToggle">Toggle Dark Mode</button>
-  <div class="container">
-    <div class="vm-card">
-      <h3>VM 1</h3>
-      <p>Status: Running</p>
-    </div>
-    <div class="vm-card">
-      <h3>VM 2</h3>
-      <p>Status: Stopped</p>
-    </div>
-    <div class="vm-card">
-      <h3>VM 3</h3>
-      <p>Status: Running</p>
-    </div>
-    <div class="vm-card">
-      <h3>VM 4</h3>
-      <p>Status: Maintenance</p>
-    </div>
-  </div>
+<body class="transition-colors duration-300 bg-gradient-light dark:bg-gradient-dark min-h-screen">
 
-  <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
+    <!-- نوار تغییر حالت دارک مود -->
+    <header class="p-4 flex justify-between items-center bg-white dark:bg-gray-800 shadow-md">
+        <h1 class="text-xl font-bold text-gray-900 dark:text-gray-200">VM Dashboard</h1>
+        <button onclick="toggleDarkMode()" class="p-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m16.364-7.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636"></path>
+            </svg>
+        </button>
+    </header>
 
-    themeToggle.addEventListener('click', () => {
-      if (body.hasAttribute('data-theme')) {
-        body.removeAttribute('data-theme');
-      } else {
-        body.setAttribute('data-theme', 'dark');
-      }
-    });
-  </script>
+    <!-- لیست VM‌ها -->
+    <main class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {% for vm in results %}
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+            <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">IP: {{ vm.ip }}</h2>
+            <ul class="mt-2 text-gray-600 dark:text-gray-400">
+                <li><strong>Total RAM:</strong> {{ vm.total_ram }}</li>
+                <li><strong>Free RAM:</strong> {{ vm.free_ram }}</li>
+                <li><strong>Total Disk:</strong> {{ vm.total_disk }}</li>
+                <li><strong>Used Disk:</strong> {{ vm.used_disk }}</li>
+                <li><strong>Free Disk:</strong> {{ vm.free_disk }}</li>
+            </ul>
+        </div>
+        {% endfor %}
+    </main>
+
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
 </body>
 </html>
