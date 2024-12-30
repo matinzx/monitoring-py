@@ -1,0 +1,24 @@
+2024-12-30 15:48:45,236 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 15:48:45,237 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-30 15:51:09,749 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 15:51:09,750 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-30 15:51:36,483 - ERROR - Error reading credentials: [Errno 2] No such file or directory: 'D:\\monitor\\monitoring-py\\vm-resource-monitor\\ip\\ips.text'
+2024-12-30 15:51:36,486 - INFO - 127.0.0.1 - - [30/Dec/2024 15:51:36] "GET / HTTP/1.1" 200 -
+2024-12-30 15:51:37,131 - INFO - 127.0.0.1 - - [30/Dec/2024 15:51:37] "GET / HTTP/1.1" 200 -
+2024-12-30 15:51:37,458 - INFO - 127.0.0.1 - - [30/Dec/2024 15:51:37] "GET / HTTP/1.1" 200 -
+2024-12-30 15:51:37,685 - INFO - 127.0.0.1 - - [30/Dec/2024 15:51:37] "GET / HTTP/1.1" 200 -
+2024-12-30 15:51:41,247 - INFO - 127.0.0.1 - - [30/Dec/2024 15:51:41] "GET / HTTP/1.1" 200 -
+2024-12-30 15:51:41,472 - INFO - 127.0.0.1 - - [30/Dec/2024 15:51:41] "GET / HTTP/1.1" 200 -
+2024-12-30 15:51:41,679 - INFO - 127.0.0.1 - - [30/Dec/2024 15:51:41] "GET / HTTP/1.1" 200 -
+2024-12-30 15:51:41,870 - INFO - 127.0.0.1 - - [30/Dec/2024 15:51:41] "GET / HTTP/1.1" 200 -
+2024-12-30 15:51:42,084 - INFO - 127.0.0.1 - - [30/Dec/2024 15:51:42] "GET / HTTP/1.1" 200 -
+2024-12-30 15:53:28,541 - INFO - 127.0.0.1 - - [30/Dec/2024 15:53:28] "GET / HTTP/1.1" 200 -
+2024-12-30 15:53:52,899 - INFO - 127.0.0.1 - - [30/Dec/2024 15:53:52] "GET / HTTP/1.1" 200 -
+2024-12-30 15:55:57,149 - INFO - 127.0.0.1 - - [30/Dec/2024 15:55:57] "GET / HTTP/1.1" 200 -
+2024-12-30 15:55:57,765 - INFO - 127.0.0.1 - - [30/Dec/2024 15:55:57] "GET / HTTP/1.1" 200 -
+2024-12-30 15:55:57,997 - INFO - 127.0.0.1 - - [30/Dec/2024 15:55:57] "GET / HTTP/1.1" 200 -
+2024-12-30 15:55:58,215 - INFO - 127.0.0.1 - - [30/Dec/2024 15:55:58] "GET / HTTP/1.1" 200 -
+2024-12-30 15:55:58,414 - INFO - 127.0.0.1 - - [30/Dec/2024 15:55:58] "GET / HTTP/1.1" 200 -
+2024-12-30 16:02:58,684 - INFO - 127.0.0.1 - - [30/Dec/2024 16:02:58] "GET / HTTP/1.1" 200 -

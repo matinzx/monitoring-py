@@ -1,13 +1,15 @@
 module.exports = {
-  darkMode: 'class', // فعال‌سازی حالت دارک مود
-  content: ["./templates/**/*.html"], // مسیر فایل‌های HTML
+  content: ["./*.html"],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-dark': 'linear-gradient(to bottom, #0f2027, #203a43, #2c5364)', // گرادیانت سبز تیره
-        'gradient-light': 'linear-gradient(to bottom, #6a11cb, #2575fc)' // گرادیانت بنفش
-      }
+      colors: {
+        gradient: {
+          light: "linear-gradient(to bottom, #ff7eb3, #ff758c)",
+          dark: "linear-gradient(to bottom, #004d40, #00695c)",
+        },
+      },
     },
   },
+  darkMode: "class", // فعال کردن دارک مود با کلاس
   plugins: [],
 };
